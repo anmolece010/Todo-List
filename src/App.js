@@ -1,11 +1,10 @@
 import "./App.css";
-import Todo from "./Component/Todo";
-import Todo2 from "./Component/Todo2";
+import Todo3 from "./Component/Todo3";
 function App() {
   return (
     <>
-      {/* <Todo /> */}
-      <Todo2 />
+      {/* <Todo2 /> */}
+      <Todo3 />
     </>
   );
 }
