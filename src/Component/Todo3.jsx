@@ -68,30 +68,54 @@ export default function Todo3() {
           minHeight: "600px",
           marginLeft: "60px",
           marginTop: "50px",
+          backgroundColor: "rgb(235,203,144)",
         }}
       >
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              TODO LIST
-            </Typography>
-            <Typography>
-              <TextField
-                sx={{ marginBottom: "15px" }}
-                value={inputList}
-                onChange={itemEvent}
-                id="standard-basic"
-                label="Input Items"
-                variant="standard"
-              />
-              <Button
-                variant="contained"
-                onClick={ListOfItems}
-                sx={{ marginLeft: "10px", marginTop: "10px" }}
+            <div
+              style={{
+                backgroundColor: "rgb(198,107,39)",
+                padding: 0,
+                margin: 0,
+                marginBottom: "10px",
+              }}
+            >
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingTop: "10px",
+                  color: "White",
+                }}
               >
-                Submit
-              </Button>
-            </Typography>
+                TODO LIST
+              </Typography>
+              <Typography sx={{ display: "flex", justifyContent: "center" }}>
+                <TextField
+                  sx={{ marginBottom: "15px" }}
+                  value={inputList}
+                  onChange={itemEvent}
+                  id="standard-basic"
+                  label="Input Items"
+                  variant="standard"
+                />
+                <Button
+                  variant="contained"
+                  onClick={ListOfItems}
+                  sx={{
+                    marginLeft: "10px",
+                    marginTop: "10px",
+                    marginBottom: "20px",
+                  }}
+                >
+                  Submit
+                </Button>
+              </Typography>
+            </div>
             <Typography>
               <RenderItems Item={Items} />
             </Typography>
