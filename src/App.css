@@ -1,8 +1,52 @@
+/* div {
+  border: 1px solid black;
+} */
+
 body {
-  background-image: url("C:\Users\gupta\OneDrive\Documents\React Projects\Todo List\todo_list\src\images\1.png");
+  background-image: url(C:\Users\gupta\OneDrive\Documents\React Projects\Todo List\todo_list\src\images\1.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-/* .banner-img {
-  width: 90vw;
-  height: 100vh;
-} */
+.todo-container {
+  background-color: blanchedalmond;
+  margin: auto;
+  margin-top: 70px;
+  margin-left: 70px;
+  margin-right: 1000px;
+  min-height: 70vh;
+  width: 450px;
+  border-radius: 5%;
+}
+
+.topbar {
+  height: 180px;
+  width: 100%;
+  background-color: rgb(213, 118, 54);
+  /* border-radius: 5%; */
+  border-top: 6px solid RGB(185 82 25);
+}
+
+.header {
+  height: 60px;
+  margin: 10px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: rgb(18, 9, 1);
+}
+
+.input {
+  height: 80px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: lightgoldenrodyellow;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}

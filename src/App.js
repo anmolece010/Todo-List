@@ -1,11 +1,10 @@
 import "./App.css";
-import Banner from "./Component/Banner";
-import Todo3 from "./Component/Todo3";
+import Todo4 from "./Component/Todo4";
+
 function App() {
   return (
     <>
-      <Banner />
-      <Todo3 />
+      <Todo4 />
     </>
   );
 }

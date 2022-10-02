@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import AutoDeleteIcon from "@mui/icons-material/AutoDelete";
 
 function RenderItems({ Item }) {
   if (Item.length != 0) {
@@ -27,6 +28,10 @@ function RenderItems({ Item }) {
                       >
                         {item}
                         <Button variant="contained" color="secondary">
+                          <AutoDeleteIcon
+                            // onClick={deleteItem(item)}
+                            sx={{ marginRight: "5px" }}
+                          />
                           Delete
                         </Button>
                       </div>
@@ -43,9 +48,11 @@ function RenderItems({ Item }) {
   }
 }
 
+const arr = [{ id: 0, name: "xyz" }];
+
 export default function Todo3() {
   const [inputList, setInputList] = useState("");
-  const [Items, setItems] = useState([]);
+  const [Items, setItems] = useState(arr);
 
   const itemEvent = (event) => {
     setInputList(event.target.value);
@@ -54,7 +61,7 @@ export default function Todo3() {
   const ListOfItems = () => {
     if (inputList != "") {
       setItems((olditems) => {
-        return [...olditems, inputList];
+        return [...olditems, [arr.id + 1, inputList]];
       });
     }
     setInputList("");
@@ -62,17 +69,18 @@ export default function Todo3() {
 
   return (
     <div className="todo-container">
-      <Card
-        sx={{
+      <div
+        style={{
           maxWidth: 550,
           minHeight: "600px",
-          marginLeft: "60px",
-          marginTop: "50px",
+          // marginLeft: "60px",
+          // marginTop: "50px",
           backgroundColor: "rgb(235,203,144)",
+          border: "2px solid white",
         }}
       >
-        <CardActionArea>
-          <CardContent>
+        <div>
+          <div>
             <div
               style={{
                 backgroundColor: "rgb(198,107,39)",
@@ -81,27 +89,28 @@ export default function Todo3() {
                 marginBottom: "10px",
               }}
             >
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                sx={{
+              <h3
+                style={{
                   display: "flex",
                   justifyContent: "center",
-                  paddingTop: "10px",
+                  padding: "10px",
                   color: "White",
                 }}
               >
                 TODO LIST
-              </Typography>
-              <Typography sx={{ display: "flex", justifyContent: "center" }}>
-                <TextField
-                  sx={{ marginBottom: "15px" }}
+              </h3>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: "10px",
+                }}
+              >
+                <input
+                  style={{ marginBottom: "15px" }}
                   value={inputList}
                   onChange={itemEvent}
-                  id="standard-basic"
                   label="Input Items"
-                  variant="standard"
                 />
                 <Button
                   variant="contained"
@@ -114,14 +123,14 @@ export default function Todo3() {
                 >
                   Submit
                 </Button>
-              </Typography>
+              </div>
             </div>
-            <Typography>
+            <div>
               <RenderItems Item={Items} />
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
